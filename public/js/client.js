@@ -22,7 +22,7 @@ function showResult(json) {
 function post() {
   fetch('/api/user', {
     method: 'POST',
-    body: JSON.stringify({id: 1, name: 'hello'}),
+    body: JSON.stringify({ id: 1, name: 'hello' }),
     headers,
   })
     .then(function (response) {
@@ -35,7 +35,7 @@ function post() {
 function put() {
   fetch('/api/user', {
     method: 'PUT',
-    body: JSON.stringify({id: 1, name: 'world'}),
+    body: JSON.stringify({ id: 1, name: 'world' }),
     headers,
   })
     .then(function (response) {
@@ -59,9 +59,9 @@ function del() {
 }
 
 window.onload = function () {
+  const form = document.getElementById('uploadForm');
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    const form = document.getElementById('uploadForm');
     const formData = new FormData(form);
     fetch('/api/upload', {
       method: 'POST',
@@ -74,4 +74,4 @@ window.onload = function () {
         showResult(json);
       });
   });
-}
+};

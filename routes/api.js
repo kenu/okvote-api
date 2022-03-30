@@ -29,9 +29,9 @@ router.delete('/user', function(req, res, next) {
 var formidable = require('formidable');
 
 router.post('/upload', function(req, res, next) {
-  console.log(req.files);
+  console.log(__dirname);
   const form = formidable({
-    uploadDir: __dirname + '/uploads/',
+    uploadDir: __dirname + '/../uploads/',
     filename: Date.now(),
   });
 
